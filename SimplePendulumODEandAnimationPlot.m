@@ -1,5 +1,5 @@
 % animation and ODE solver using RK4 method for Single Pendulum Combined.
-% noe that when angle is minimum veloctity is maximum.
+% note that when angle is minimum veloctity is maximum.
 
 domain = [0,30];      % Domain to solve ODE (in seconds), speeds up pendulum or slows it down.
 N=500;                % N = number of steps
