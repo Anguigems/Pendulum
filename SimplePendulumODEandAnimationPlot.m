@@ -31,7 +31,7 @@ for k=1:N
   plot(t,Y(:,1),'--b', 'Linewidth', 2.5, 'DisplayName','Angle theta') % plots angle theta
   plot(t,Y(:,2),'--r', 'Linewidth', 2.5, 'DisplayName','Velocity') % plots velocity theta'
     hold on
-    legend('Angle theta','Velocity')
+    legend('Velocity','Angle theta')
     % Cosmetics for graphs
 set(gca,'FontSize',16)
 %legend('Trapezium','Simpson', 'Location', 'northwest')
