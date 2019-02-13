@@ -20,7 +20,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-% Error/differences over time for 2 Double Pendulum's simultaneously.
+% Differences over time for 2 Double Pendulum's simultaneously.
 % ODE solver using RK4 method. 
 % t=time, y=theta
 % compares difference in angle theta w.r.t time
@@ -43,12 +43,11 @@ for i =1:length(Narray)
     hold on
     plot(t,abs(abs(y(:,3))-abs(y(:,7))),'-b','Linewidth',2.5, 'DisplayName','lower masses') % lower mass m2.
     hold on
-    legend('upper masses','lower masses') 
+    legend('upper masses','lower masses', 'Location', 'northwest') 
 end
 
 % Cosmetics for graphs
-set(gca,'FontSize',16)
-%legend('Trapezium','Simpson', 'Location', 'northwest')
+set(gca,'FontSize',14)
 ylim([0,1.5])
 xlim([0,40])
 xlabel('time t (seconds)')
