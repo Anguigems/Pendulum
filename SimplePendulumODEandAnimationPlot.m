@@ -53,10 +53,9 @@ for k=1:N
   plot(t,Y(:,1),'--b', 'Linewidth', 2.5, 'DisplayName','Angle theta') % plots angle theta
   plot(t,Y(:,2),'--r', 'Linewidth', 2.5, 'DisplayName','Velocity') % plots velocity theta'
     hold on
-    legend('Velocity','Angle theta')
+  legend('Velocity','Angle theta', 'Location', 'northwest')
     % Cosmetics for graphs
-set(gca,'FontSize',16)
-%legend('Trapezium','Simpson', 'Location', 'northwest')
+set(gca,'FontSize',14)
 ylim([-10,10])
 xlim([0,15])
 xlabel('time t')
@@ -66,8 +65,8 @@ end
 function Y=ODEstep(t,Y,h,method)
 if method ==3
 % RK4 stepper
-%Input: current t, current Y (array),  step size h
-%Output: approximate solution value at t+h
+% Input: current t, current Y (array),  step size h
+% Output: approximate solution value at t+h
     hh=h/2;
     s1=dydt(t,Y);
     s2=dydt(t+hh,Y+hh*s1);
@@ -88,7 +87,6 @@ function f=dydt(t,Y)
 [l,g,A,omega] = param();
 f(1)=Y(2);
 f(2)= -(g/l - omega^2*A*cos(omega*t)/l)*sin(Y(1));
-% MATLAB 2nd Year Lab 10 explains this ODE.
 end
 
 % Put the physical parameters here.
