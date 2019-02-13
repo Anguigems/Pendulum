@@ -31,7 +31,6 @@ Y(1,:)=Y0; % tells it to set row 1 as y0 vector.
 t(1)=domain(1);
 
 
-
 % Cosmetics for plot
 set(gca,'xlim',[-1 1],'ylim',[-1 1], ...
   'Visible','on','NextPlot','add');
@@ -78,18 +77,12 @@ for k=1:N
   set(bob4,'xdata',xbob4,'ydata',ybob4)
   drawnow; pause(h)
 end
-% F=getframe(gfc);
-myVideo = VideoWriter('Two_Double_Animation_Comparison_for_youtube.mp4','MPEG-4');
-open(myVideo)
-writeVideo(myVideo);  
-%writeVideo(myVideo,F);
-close(myVideo)
 
 function Y=ODEstep(t,Y,h,method)
 if method ==3
 % RK4 stepper
-%Input: current t, current Y (array),  step size h
-%Output: approximate solution value at t+h
+% Input: current t, current Y (array),  step size h
+% Output: approximate solution value at t+h
     hh=h/2;
     s1=dydx(t,Y);
     s2=dydx(t+hh,Y+hh*s1);
@@ -127,7 +120,4 @@ m1=1; m2=1; l1=0.45; l2=0.45; g= 9.8; u= m2/(m1+m2);
 % only need an l1,l2,m1,m2 since the masses and lengths of both pendulums
 % will be the same.
 % g is gravity.
-% omega is the frequency of the pivots oscillation, it causes the pendulum 
-% to move slightly around it's pivot point. 
-% If A is non-zero then the peundulum pivot point will move slightly.
 end
